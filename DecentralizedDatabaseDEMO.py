@@ -7,7 +7,7 @@ import requests
 import pandas as pd
 from typing import Dict, List, Optional, Tuple
 
-# Page configuration
+# Page documentation
 st.set_page_config(
     page_title="BigchainDB Network Dashboard",
     page_icon="🔗",

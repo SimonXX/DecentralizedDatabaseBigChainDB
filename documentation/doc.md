@@ -1,5 +1,4 @@
-
-This documentation explains how to set up a multi-node BigChainDB network using Docker in a test environment.  
+This documentation explains how to set up a multi-node BigChainDB network using Docker in a test environment and run the proposed visual demo.  
 Please note, this setup is **not intended for production use**, but it provides a solid foundation to understand distributing BigChainDB components across multiple nodes.
 
 
