@@ -1,5 +1,7 @@
 # Decentralized Database Demo Environment
 
+https://github.com/user-attachments/assets/576ef115-ec14-49de-b67f-fd25149b4461
+
 ## Summary
 - This repository contains a visual demonstration environment for interacting with a decentralized database architecture.
 - It provides a reproducible Conda environment, a step-by-step setup guide, and a Streamlit-based visual demo.
