@@ -58,3 +58,8 @@ streamlit run DecentralizedDatabaseDEMO.py
   ```
   documentation/doc.md
   ```
+
+## Fast Test
+After completing the environment configuration, if you want to quickly verify that everything is set up correctly and that the blockchain network is functioning as expected, you can run the `rapidDemo.py` script.
+
+
