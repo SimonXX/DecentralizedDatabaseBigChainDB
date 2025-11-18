@@ -5,7 +5,7 @@ https://github.com/user-attachments/assets/576ef115-ec14-49de-b67f-fd25149b4461
 ## Summary
 - This repository contains a visual demonstration environment for interacting with a decentralized database architecture.
 - It provides a reproducible Conda environment, a step-by-step setup guide, and a Streamlit-based visual demo.
-- See the full setup guide at `documentation/doc.md`. 📄
+- See the full setup guide at `documentation/README`. 📄
 
 ## Overview
 This project hosts a visual demo that helps explore and interact with a decentralized database architecture. The demo is implemented with Streamlit and the repository includes an `environment.yml` file so you can reproduce the same Conda environment used for development and testing.
@@ -13,7 +13,7 @@ This project hosts a visual demo that helps explore and interact with a decentra
 ## Key features
 - Reproducible Conda environment (environment.yml)
 - Streamlit visual demo
-- Step-by-step configuration guide in `documentation/doc.md`
+- Step-by-step configuration guide in `documentation/README`
 
 ## Prerequisites
 - Conda (Anaconda or Miniconda) installed and available on your PATH
@@ -58,7 +58,7 @@ streamlit run DecentralizedDatabaseDEMO.py
 ## Documentation
 - Detailed, step-by-step configuration instructions are in:
   ```
-  documentation/doc.md
+  documentation/README
   ```
 
 ## Fast Test
