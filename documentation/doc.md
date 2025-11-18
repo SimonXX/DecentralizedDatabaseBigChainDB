@@ -423,6 +423,7 @@ member2 b2fdaca05c6a2859008bea5a2089a344f232c4e7 10.89.0.3:26656
 member3 00bc55e366f2247b71e3d903b1fb5286c2f63015 10.89.0.4:26656 
 member4 ee08d1331bdb3916d93e3d6eb91ab76b52b8650b 10.89.0.5:26656
 
+## Fast command to set node with seed
 
 for node 1 we insert the others 3 
 ``` shell
@@ -449,7 +450,7 @@ node 4
 PEERS="e535544d3e733013787fc0a73670962c31c83dfb@10.89.0.2:26656,e535544d3e733013787fc0a73670962c31c83dfb@10.89.0.2:26656,e535544d3e733013787fc0a73670962c31c83dfb@10.89.0.2:26656"
 ```
 
-## Fast command to set node
+
 
 in each node we run separate this command so che we set also other parameter 
 
