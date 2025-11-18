@@ -1,34 +1,16 @@
-# Cartelle di configurazione IDE (ad esempio IntelliJ, PyCharm)
 .idea/
-
-# Cartelle e file di ambiente virtuale (se usi venv o simili)
 venv/
 env/
 __pycache__/
-
-# File temporanei Python
 *.pyc
 *.pyo
 *.pyd
-
-# File di log
 *.log
-
-# File di ambiente Conda (il file environment.yml deve rimanere nel repo, quindi non lo ignoriamo)
-# Se usi Anaconda e vuoi ignorare cartelle di ambiente
 .conda/
-
-# Dati di sistema
 .DS_Store
-
-# Output di build, cache o cartelle di distribuzione
 build/
 dist/
 *.egg-info/
-
-# File temporanei generati da editor (es. swap di vim, file temporanei)
 *.swp
 *.swo
-
-# File di configurazione locale o personalizzato che non devono andare su git
 *.local
