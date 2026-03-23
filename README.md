@@ -4,8 +4,6 @@ A fully automated, production-style demo of a **4-node BigchainDB blockchain net
 
 https://github.com/user-attachments/assets/576ef115-ec14-49de-b67f-fd25149b4461
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/YOUR_USERNAME/BigChainDB?quickstart=1)
-
 ---
 
 ## Table of Contents
@@ -100,12 +98,7 @@ This script:
 
 Open **http://localhost:8080** when it finishes.
 
-### Option 2 — GitHub Codespaces (zero local setup)
-
-Click the badge above (or **Code → Codespaces → New codespace**).
-The dev container automatically builds the environment, starts all nodes, and opens the dashboard.
-
-### Option 3 — React Dashboard (modern UI)
+### Option 2 — React Dashboard (modern UI)
 
 ```bash
 # Start the blockchain nodes
@@ -120,7 +113,7 @@ npm run dev
 
 Open **http://localhost:5173** for the React dashboard with dark/minimal design.
 
-### Option 4 — Streamlit locally (nodes in Docker)
+### Option 3 — Streamlit locally (nodes in Docker)
 
 ```bash
 docker compose up -d coordinator1 member2 member3 member4
@@ -744,9 +737,6 @@ npm run preview   # Preview production build
 
 ```
 BigChainDB/
-├── .devcontainer/
-│   ├── devcontainer.json          # GitHub Codespaces config (auto-start)
-│   └── Dockerfile                 # Python 3.9 + build deps for Codespaces
 ├── docker/
 │   └── streamlit.Dockerfile       # Streamlit dashboard container (Python 3.6)
 ├── frontend/                      # React + Vite dashboard
