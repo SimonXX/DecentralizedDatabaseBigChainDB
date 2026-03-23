@@ -1,0 +1,121 @@
+services:
+
+  coordinator1:
+    image: bigchaindb/bigchaindb:all-in-one
+    container_name: coordinator1
+    ports:
+      - "9984:9984"
+      - "9985:9985"
+      - "26657:26657"
+    volumes:
+      - coordinator1-db:/data/db
+      - coordinator1-configdb:/data/configdb
+      - coordinator1-tendermint:/tendermint
+    networks:
+      - bigchaindb-net
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import urllib.request; urllib.request.urlopen('http://localhost:9984/')\" || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+
+  member2:
+    image: bigchaindb/bigchaindb:all-in-one
+    container_name: member2
+    ports:
+      - "9986:9984"
+      - "9987:9985"
+      - "26658:26657"
+    volumes:
+      - member2-db:/data/db
+      - member2-configdb:/data/configdb
+      - member2-tendermint:/tendermint
+    networks:
+      - bigchaindb-net
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import urllib.request; urllib.request.urlopen('http://localhost:9984/')\" || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+
+  member3:
+    image: bigchaindb/bigchaindb:all-in-one
+    container_name: member3
+    ports:
+      - "9988:9984"
+      - "9989:9985"
+      - "26659:26657"
+    volumes:
+      - member3-db:/data/db
+      - member3-configdb:/data/configdb
+      - member3-tendermint:/tendermint
+    networks:
+      - bigchaindb-net
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import urllib.request; urllib.request.urlopen('http://localhost:9984/')\" || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+
+  member4:
+    image: bigchaindb/bigchaindb:all-in-one
+    container_name: member4
+    ports:
+      - "9990:9984"
+      - "9991:9985"
+      - "26660:26657"
+    volumes:
+      - member4-db:/data/db
+      - member4-configdb:/data/configdb
+      - member4-tendermint:/tendermint
+    networks:
+      - bigchaindb-net
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import urllib.request; urllib.request.urlopen('http://localhost:9984/')\" || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+      args:
+        - VITE_DOCKER=true
+    container_name: bigchaindb-dashboard
+    ports:
+      - "8080:8080"
+    networks:
+      - bigchaindb-net
+    depends_on:
+      coordinator1:
+        condition: service_healthy
+      member2:
+        condition: service_healthy
+      member3:
+        condition: service_healthy
+      member4:
+        condition: service_healthy
+    restart: unless-stopped
+
+networks:
+  bigchaindb-net:
+    driver: bridge
+
+volumes:
+  coordinator1-db:
+  coordinator1-configdb:
+  coordinator1-tendermint:
+  member2-db:
+  member2-configdb:
+  member2-tendermint:
+  member3-db:
+  member3-configdb:
+  member3-tendermint:
+  member4-db:
+  member4-configdb:
+  member4-tendermint:

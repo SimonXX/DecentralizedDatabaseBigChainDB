@@ -14,3 +14,12 @@ dist/
 *.swp
 *.swo
 *.local
+.env
+
+# Node
+node_modules/
+frontend/dist/
+
+# Export files
+*.txt
+!requirements.txt

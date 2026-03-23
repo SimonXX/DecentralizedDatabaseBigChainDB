@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from bigchaindb_driver import BigchainDB
 from bigchaindb_driver.crypto import generate_keypair
@@ -54,12 +55,30 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Configuration
+# Configuration — env vars allow the dashboard to run inside docker-compose
+# where nodes are reachable by container name, while defaulting to localhost
+# for local development.
 NODES = [
-    {'name': 'coordinator1', 'url': 'http://localhost:9984', 'tendermint': 'http://localhost:26657'},
-    {'name': 'member2', 'url': 'http://localhost:9986', 'tendermint': 'http://localhost:26658'},
-    {'name': 'member3', 'url': 'http://localhost:9988', 'tendermint': 'http://localhost:26659'},
-    {'name': 'member4', 'url': 'http://localhost:9990', 'tendermint': 'http://localhost:26660'}
+    {
+        'name': 'coordinator1',
+        'url': os.getenv('NODE1_URL', 'http://localhost:9984'),
+        'tendermint': os.getenv('NODE1_TM', 'http://localhost:26657'),
+    },
+    {
+        'name': 'member2',
+        'url': os.getenv('NODE2_URL', 'http://localhost:9986'),
+        'tendermint': os.getenv('NODE2_TM', 'http://localhost:26658'),
+    },
+    {
+        'name': 'member3',
+        'url': os.getenv('NODE3_URL', 'http://localhost:9988'),
+        'tendermint': os.getenv('NODE3_TM', 'http://localhost:26659'),
+    },
+    {
+        'name': 'member4',
+        'url': os.getenv('NODE4_URL', 'http://localhost:9990'),
+        'tendermint': os.getenv('NODE4_TM', 'http://localhost:26660'),
+    },
 ]
 
 TIMEOUT = 30

@@ -1,3 +1,4 @@
+import os
 from bigchaindb_driver import BigchainDB
 from bigchaindb_driver.crypto import generate_keypair
 import time
@@ -5,12 +6,28 @@ import json
 import requests
 from typing import List, Dict, Optional, Tuple
 
-# Configuration of the 4 nodes
+# Configuration of the 4 nodes — env vars override for containerised execution
 nodes = [
-    {'name': 'coordinator1', 'url': 'http://localhost:9984', 'tendermint': 'http://localhost:26657'},
-    {'name': 'member2', 'url': 'http://localhost:9986', 'tendermint': 'http://localhost:26658'},
-    {'name': 'member3', 'url': 'http://localhost:9988', 'tendermint': 'http://localhost:26659'},
-    {'name': 'member4', 'url': 'http://localhost:9990', 'tendermint': 'http://localhost:26660'}
+    {
+        'name': 'coordinator1',
+        'url': os.getenv('NODE1_URL', 'http://localhost:9984'),
+        'tendermint': os.getenv('NODE1_TM', 'http://localhost:26657'),
+    },
+    {
+        'name': 'member2',
+        'url': os.getenv('NODE2_URL', 'http://localhost:9986'),
+        'tendermint': os.getenv('NODE2_TM', 'http://localhost:26658'),
+    },
+    {
+        'name': 'member3',
+        'url': os.getenv('NODE3_URL', 'http://localhost:9988'),
+        'tendermint': os.getenv('NODE3_TM', 'http://localhost:26659'),
+    },
+    {
+        'name': 'member4',
+        'url': os.getenv('NODE4_URL', 'http://localhost:9990'),
+        'tendermint': os.getenv('NODE4_TM', 'http://localhost:26660'),
+    },
 ]
 
 # Configuration

@@ -1,0 +1,6 @@
+bigchaindb-driver==0.6.2
+streamlit==1.10.0
+requests==2.27.1
+pandas==1.1.5
+numpy==1.19.5
+pynacl==1.1.2
