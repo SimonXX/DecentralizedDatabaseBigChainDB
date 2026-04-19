@@ -2,9 +2,7 @@
 
 A fully automated, production-style demo of a **4-node BigchainDB blockchain network** featuring Byzantine Fault Tolerant (BFT) consensus, dual dashboards (Streamlit + React), and complete tooling for creating, transferring, and querying digital assets across a distributed ledger.
 
-https://github.com/user-attachments/assets/576ef115-ec14-49de-b67f-fd25149b4461
-
----
+<img width="1280" height="720" alt="Image" src="https://github.com/user-attachments/assets/a124d470-73ef-4f0e-a237-0512e7520e42" />
 
 ## Table of Contents
 
